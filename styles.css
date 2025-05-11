@@ -328,7 +328,7 @@
             100% { transform: rotate(360deg); }
         }
 
-        .card:visible {
+        .card.visible {
             opacity: 1;
             transform: translateY(0);
         }
