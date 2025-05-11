@@ -328,7 +328,7 @@
             100% { transform: rotate(360deg); }
         }
 
-        .card.visible {
+        .card:visible {
             opacity: 1;
             transform: translateY(0);
         }
@@ -361,18 +361,6 @@
             z-index: 2;
             margin-top: -1px;
             backdrop-filter: blur(10px);
-        }
-
-        footer a {
-            color: #a5b4fc;
-            text-decoration: none;
-            margin: 0 10px;
-            transition: all 0.3s;
-        }
-
-        footer a:hover {
-            text-shadow: 0 0 15px #a5b4fc;
-            transform: translateY(-2px);
         }
 
         /* Responsive Design */
