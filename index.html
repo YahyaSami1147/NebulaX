@@ -441,8 +441,8 @@
         width: 150px;
         height: 150px;
         margin: 0 auto;
-        padding: 0; /* Remove padding to maximize usable space */
-        position: relative; /* Ensure container is a positioning context */
+        padding: 0; 
+        position: relative;
     }
 
     .orbit-center {
@@ -582,14 +582,27 @@
         <h2>Tokenomics</h2>
 
         <div class="card-container">
-            <div class="card" id="tokenDetails">
-                <h2>Distribution Details</h2>
-                <p><strong>Liquidity (60%):</strong> Allocated to ensure smooth trading and market stability.</p>
-                <p><strong>Community Rewards (20%):</strong> Distributed to incentivize engagement and growth.</p>
-                <p><strong>Team Reserve (10%):</strong> Held for team development and operational needs.</p>
-                <p><strong>Future Growth (10%):</strong> Reserved for future projects and ecosystem expansion.</p>
-            </div>
-        </div>
+    <div class="card" id="tokenDetails">
+        <h2>Distribution Details</h2>
+        <p>• <strong>Liquidity (60%):</strong> <br>Allocated to ensure smooth trading and market stability.</p>
+        <p>• <strong>Community Rewards (20%):</strong> <br>Distributed to incentivize engagement and growth.</p>
+        <p>• <strong>Team Reserve (10%):</strong> <br>Held for team development and operational needs.</p>
+        <p>• <strong>Future Growth (10%):</strong> <br>Reserved for future projects and ecosystem expansion.</p>
+    </div>
+</div>
+
+<style>
+#tokenDetails p {
+    text-align: left;
+    margin: 10px 0;
+    padding-left: 15px;
+}
+
+#tokenDetails h2 {
+    text-align: left; 
+}
+</style>
+
     </section>
 
     <!-- About Section -->
@@ -624,7 +637,7 @@
     <!-- Footer -->
     <footer>
         <p>Disclaimer: Crypto investments carry risks. Conduct your own research before investing.</p>
-        <p>All rights reserved © NebulaX 2025 | <a href="#home">Terms</a> | <a href="#contact">Privacy</a></p>
+        <p>All rights reserved © NebulaX 2025</p>
     </footer>
 
     <script>
