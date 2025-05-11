@@ -46,12 +46,10 @@
 
         /* Orbital Animation Container */
         .orbit-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
+            position: relative;
             width: 300px;
             height: 300px;
-            transform: translate(-50%, -50%);
+            margin: 0 auto;
             z-index: 1;
             pointer-events: none;
         }
@@ -79,7 +77,7 @@
             position: absolute;
             width: 20px;
             height: 20px;
-            background: url('https://via.placeholder.com/20/6366f1/000000?text=FXC') no-repeat center;
+            background: url('CX.png') no-repeat center;
             background-size: contain;
             animation: orbit 10s linear infinite;
         }
@@ -100,11 +98,12 @@
             left: 50%;
             width: 40px;
             height: 40px;
-            background: url('https://via.placeholder.com/40/a5b4fc/000000?text=BCH') no-repeat center;
+            background: url('bitcoin-cash-circle.svg') no-repeat center;
             background-size: contain;
             transform: translate(-50%, -50%);
             filter: drop-shadow(0 0 15px #a5b4fc);
             animation: pulse 3s infinite ease-in-out;
+            z-index: 2;
         }
 
         /* Navbar Styles */
@@ -439,19 +438,35 @@
             }
 
             .orbit-container {
-                width: 200px;
-                height: 200px;
-            }
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+        padding: 0; /* Remove padding to maximize usable space */
+        position: relative; /* Ensure container is a positioning context */
+    }
 
-            .orbit-token {
-                width: 15px;
-                height: 15px;
-            }
+    .orbit-center {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the orbit-center */
+    }
 
-            .orbit-center {
-                width: 30px;
-                height: 30px;
-            }
+    .orbit-token {
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Initial position at center */
+    }
+
+    @keyframes orbit {
+        from { transform: translate(-50%, -50%) rotate(0deg) translateX(50px) rotate(0deg); }
+        to { transform: translate(-50%, -50%) rotate(360deg) translateX(50px) rotate(-360deg); }
+    }
         }
 
         @media (min-width: 769px) and (max-width: 1024px) {
@@ -464,8 +479,15 @@
             }
 
             .orbit-container {
-                width: 250px;
-                height: 250px;
+                width: 200px;
+                height: 200px;
+                margin: 0 auto;
+                padding: 10px;
+            }
+
+            @keyframes orbit {
+                from { transform: rotate(0deg) translateX(80px) rotate(0deg); }
+                to { transform: rotate(360deg) translateX(80px) rotate(-360deg); }
             }
         }
 
@@ -522,16 +544,6 @@
         <div class="particle" style="top: 80%; left: 40%; width: 2px; height: 2px; animation-delay: 14s;"></div>
     </div>
 
-    <!-- Orbital Animation -->
-    <div class="orbit-container" aria-hidden="true">
-        <div class="orbit-center"></div>
-        <div class="orbit"><div class="orbit-token" style="transform: rotate(0deg) translateX(120px) rotate(0deg);"></div></div>
-        <div class="orbit"><div class="orbit-token" style="transform: rotate(72deg) translateX(100px) rotate(-72deg);"></div></div>
-        <div class="orbit"><div class="orbit-token" style="transform: rotate(144deg) translateX(80px) translateY(-80px) rotate(-144deg);"></div></div>
-        <div class="orbit"><div class="orbit-token" style="transform: rotate(216deg) translateX(60px) translateY(60px) rotate(-216deg);"></div></div>
-        <div class="orbit"><div class="orbit-token" style="transform: rotate(288deg) translateX(40px) translateY(-40px) rotate(-288deg);"></div></div>
-    </div>
-
     <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">
@@ -559,7 +571,16 @@
 
     <!-- Tokenomics Section -->
     <section class="section tokenomics" id="tokenomics">
+        <div class="orbit-container" aria-hidden="true">
+            <div class="orbit-center"></div>
+            <div class="orbit"><div class="orbit-token" style="transform: rotate(0deg) translateX(120px) rotate(0deg);"></div></div>
+            <div class="orbit"><div class="orbit-token" style="transform: rotate(72deg) translateX(120px) rotate(-72deg);"></div></div>
+            <div class="orbit"><div class="orbit-token" style="transform: rotate(144deg) translateX(120px) rotate(-144deg);"></div></div>
+            <div class="orbit"><div class="orbit-token" style="transform: rotate(216deg) translateX(120px) rotate(-216deg);"></div></div>
+            <div class="orbit"><div class="orbit-token" style="transform: rotate(288deg) translateX(120px) rotate(-288deg);"></div></div>
+        </div>
         <h2>Tokenomics</h2>
+
         <div class="card-container">
             <div class="card" id="tokenDetails">
                 <h2>Distribution Details</h2>
